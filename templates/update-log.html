@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: 'Minecraft', sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        .rules {
+            margin-top: 25px;
+            padding: 10px;
+            border: 5px solid #4CAF50;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    {% include 'topbar.html' %}
+
+    <div class="rules">
+        <h2>4.0 : The Server Crash</h2>
+        <ul>
+            <li>The server was reset due to a machine error, causing a crash and destruction of the website and server.</li>
+        </ul>
+    </div>
+
+    <div class="rules">
+        <h2>3.0 : The Bedrock Update</h2>
+        <ul>
+            <li>The server reset with new rules implemented.</li>
+        </ul>
+    </div>
+
+    <div class="rules">
+        <h2>2.0 : The First Reset</h2>
+        <ul>
+            <li>The server reset, removing all progress, due to new players struggling with better players using duplication glitches.</li>
+        </ul>
+    </div>
+
+    <div class="rules">
+        <h2>1.2 : Revert</h2>
+        <ul>
+            <li>The server was reverted to the 1.0 version due to connection issues with the nichoboy.no IP address.</li>
+        </ul>
+    </div>
+
+    <div class="rules">
+        <h2>1.1 : The Beta For Bedrock</h2>
+        <ul>
+            <li>Compatibility with Bedrock edition was attempted in this release, paving the way for version 3.0.</li>
+            <li>All rules were disbanded for this update.</li>
+        </ul>
+    </div>
+
+    <div class="rules">
+        <h2>1.0 : The Initial Start</h2>
+        <ul>
+            <li>In the initial release, two maps were available: BlueMap and DynMap.</li>
+            <li>There were minimal rules, only prohibiting hacking.</li>
+            <li>A website was developed but is currently unavailable due to corruption resulting from a server crash.</li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+{% include 'topbar.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            overflow: hidden; 
+        }
+
+        #inviteButton {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            z-index: 2; 
+        }
+
+        #inviteButton:hover {
+            background-color: #0b7dda;
+        }
+
+        img {
+            width: 50vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        #mirroredGif {
+            display: none;
+        }
+        
+        @media (min-width: 600px) {
+            #mirroredGif {
+                display: inline; 
+                transform: scaleX(-1);
+            }
+        }
+
+        @media (max-width: 600px) {
+            /* Fullscreen the shown gif on phones */
+            img {
+                display: none;
+            }
+
+            /* Fullscreen a third gif on phones */
+            #mirroredGif {
+                display: inline;
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+                transform: scaleX(-1);
+            }
+
+            /* Adjust button position on phone */
+            #inviteButton {
+                top: calc(100% - 60px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;">
+        <img src="https://media.tenor.com/hjjG_i4XmcEAAAAM/lizard-dance.gif" alt="Lizard Dance GIF">
+
+        <img id="mirroredGif" src="https://media.tenor.com/hjjG_i4XmcEAAAAM/lizard-dance.gif" alt="Mirrored Lizard Dance GIF">
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="{{ url_for('static', filename='toothless.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button id="inviteButton" onclick="inviteBot()">Invite Bot to Server</button>
+
+    <script>
+        var audio = document.getElementById('backgroundMusic');
+
+        // Play audio after a delay
+        setTimeout(function() {
+            audio.play();
+        }, 1500);
+
+        // Pause audio when leaving the page
+        window.onbeforeunload = function() {
+            audio.pause();
+        };
+
+        // Event listener to restart audio when returning to the page
+        document.addEventListener("visibilitychange", function() {
+            if (document.visibilityState === 'visible') {
+                setTimeout(function() {
+                    audio.play();
+                }, 0);
+            } else {
+                audio.pause();
+            }
+        });
+
+        function inviteBot() {
+            window.open('https://discord.com/oauth2/authorize?client_id=1200030502988550225&scope=bot+applications.commands&permissions=36700160', '_blank');
+        }
+    </script>
+</body>
+</html>

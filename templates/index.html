@@ -1,0 +1,56 @@
+{% include 'topbar.html' %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
+    <style>
+        body {
+            font-family: 'Minecraft', sans-serif; 
+            background-color: #000; 
+            color: #fff;}
+
+        h1 {
+            color: #4CAF50; 
+        }
+
+        .server-details {
+            margin-top: 25px;
+            padding: 10px;
+            border: 5px solid #4CAF50;
+            border-radius: 0px;
+        }
+
+        .rules {
+            margin-top: 25px;
+            padding: 10px;
+            border: 5px solid #4CAF50;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Minecraft Server Details</h1>
+
+    <div class="rules">
+        <p>Server IP : </p>
+        <p>Java: Nichoboy.no</p>
+        <p>Bedrock: Nichoboy.no</p>
+    </div>
+
+    <div class="rules">
+        <h2>Regler:</h2>
+        <ul>
+            <li>Ingen reklame: Ikke promoter andre servere eller tjenester i serverchatten.</li>
+            <li>Ingen x-ray eller misbruk av ressurspakker: Ikke bruk verktøy som lar deg se gjennom vegger eller lokalisere ressurser urettferdig.</li>
+            <li>Rapporter problemer ansvarlig: Hvis du finner en feil eller et problem, rapporter det til serverpersonalet i stedet for å utnytte det.</li>
+            <li>Ingen AFK-misbruk: Ikke bruk AFK (borte fra tastaturet) metoder for å oppnå urettferdige fordeler.</li>
+            <li>Ingen spamming eller overdreven bruk av store bokstaver: Hold chatten lesbar og respektfull.</li>
+            <li>Ingen flytende trær eller uskjønne bygg: Fullfør ressursinnsamling og fjern flytende trær eller uskjønne strukturer.</li>
+            <li>Ingen utnyttelse av feil: Ikke utnytt spillfeil eller exploits for å oppnå urettferdige fordeler.</li>
+        </ul>
+    </div>
+</body>
+</html>
